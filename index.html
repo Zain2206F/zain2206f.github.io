@@ -46,46 +46,7 @@ $("video").click(function(){
 });
 });
 
-const nameEl = document.querySelector("#name");
-const emailEl = document.querySelector("#email");
-const companyNameEl = document.querySelector("#company-name");
-const messageEl = document.querySelector("#message");
 
-const form = document.querySelector("#submit-form");
-
-function checkValidations() {
-  let letters = /^[a-zA-Z\s]*$/;
-  const name = nameEl.value.trim();
-  const email = emailEl.value.trim();
-  const companyName = companyNameEl.value.trim();
-  const message = messageEl.value.trim();
-  if (name === "") {
-     document.querySelector(".name-error").classList.add("error");
-      document.querySelector(".name-error").innerText =
-        "Please fill out this field!";
-  } else {
-    if (!letters.test(name)) {
-      document.querySelector(".name-error").classList.add("error");
-      document.querySelector(".name-error").innerText =
-        "Please enter only characters!";
-    } else {
-      
-    }
-  }
-  if (email === "") {
-     document.querySelector(".name-error").classList.add("error");
-      document.querySelector(".name-error").innerText =
-        "Please fill out this field!";
-  } else {
-    if (!letters.test(name)) {
-      document.querySelector(".name-error").classList.add("error");
-      document.querySelector(".name-error").innerText =
-        "Please enter only characters!";
-    } else {
-      
-    }
-  }
-}
 
 function reset() {
   nameEl = "";
@@ -214,6 +175,16 @@ $(function(){
   }
   
 });
+
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
+  });
+
+
+
 
   </script>
 <style>
@@ -735,13 +706,13 @@ body {font-family: Verdana, sans-serif;}
 
 
 
-.img-fluid {
+.img-responsive {
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.img-fluid:hover {
+.img-responsive:hover {
 	-webkit-filter: grayscale(0);
 	filter: grayscale(0);
 }
@@ -1310,6 +1281,9 @@ color: seagreen;
 
 }
 
+
+
+
 </style>
 </head>
 
@@ -1743,68 +1717,62 @@ color: seagreen;
 
 
       </div>
-      <div class="container-fluid" id="contact"><h2 class="welcome"></small><b>CONTACT</b><small><br>US</h2><br>
-      <div class="contain">
-<center>
-        <div >
+      <div >
       
-          <div class="form">
-            <h4>GET IN TOUCH</h4>
-            <h2 class="form-headline">Send Us Recommendations</h2>
-            <form id="submit-form" action="">
-              <p>
-               
-                <input id="name" class="form-input" type="text" placeholder="Your Name*" required>
-                <small class="name-error"></small>
-              </p>
-              <p>
-                <input id="email" class="form-input" type="email" placeholder="Your Email*" required>
-                <small class="name-error"></small>
-              </p>
-              <p class="full-width">
-                <input id="company-name" class="form-input" type="number" placeholder="Contact No* " required>
-                <small></small>
-              </p>
-              <p class="full-width">
-                <textarea  minlength="20" id="message" cols="30" rows="7" placeholder="Your Message*" required></textarea>
-                <small></small>
-              </p>
+        <div class="form">
+          <h4>GET IN TOUCH</h4>
+          <h2 class="form-headline">Send Us Recommendations</h2>
+          <form id="submit-form" action="">
+            <p>
              
-              <p class="full-width">
-                <div class="container">
-                  <button id="button" >Submit</button>
-                </div>
-              </center>
+              <input id="name" class="form-input" type="text" placeholder="Your Name*" required>
+              <small class="name-error"></small>
+            </p>
+            <p>
+              <input id="email" class="form-input" type="email" placeholder="Your Email*" required>
+              <small class="name-error"></small>
+            </p>
+            <p class="full-width">
+              <input id="company-name" class="form-input" type="number" placeholder="Contact No* " required>
+              <small></small>
+            </p>
+            <p class="full-width">
+              <textarea  minlength="20" id="message" cols="30" rows="7" placeholder="Your Message*" required></textarea>
+              <small></small>
+            </p>
+           
+            <p class="full-width">
+              <div class="container">
+                <button id="button" >Submit</button>
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="container pt-5 ">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by <b><a class="min" href="#">Jenkinson Aquarium</a> </b></p>
+          </div>
   
-      
-          <div class="contacts contact-wrapper">
-      
-            <ul class="op">
-       
-    <hr>
-    <div class="container pt-5 ">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by <b><a class="min" href="#">Jenkinson Aquarium</a> </b></p>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
-          </ul>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-
-</footer>
-
-</div>
-      </div>
-      </div></div>
-
+  
+  </footer>
+  
+  </div>
+        </div>
+        </div></div>
+  
+        
      
 
 
